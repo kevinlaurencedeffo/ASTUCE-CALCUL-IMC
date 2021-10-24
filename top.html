@@ -1,0 +1,115 @@
+<HTML>
+<HEAD><TITLE> calcul de l'imc </TITLE>
+  <script language="javascript">
+    function calculdeimc(){
+    let masse=document.getElementById("m").value;
+    let taille=document.getElementById("t").value;
+    let imc=[masse/(taille*taille)];
+    document.getElementById("resultat").value=imc;
+    if(imc<18.5){
+      document.getElementById("etat").innerHTML="insuffisance pondérale";
+      document.getElementById("risques").innerHTML="vous etes considéré en sous poid. les risques lié a l'insuffisance pondérale sont l'ostéoporose, l'infertilité et une faiblesse au niveau du systeme immunitaire.";
+      document.getElementById("conseils").innerHTML="faudrait mieux vous alimenter c'est a dire de varier votre alimentation en consommant des aliments richent en glucides,lipide,protide,sels mineraux et surtout n'oublier pas d'equilibrer.";
+      document.getElementById("img").style.background="url(img/images.jpeg)";
+    }
+    if(imc>25){
+      document.getElementById("etat").innerHTML="obeisité";
+      document.getElementById("risques").innerHTML="vous etes plus a risque de develloper les Diabetes,des maladies cardiovasculaires,et des cancers."
+      document.getElementById("conseils").innerHTML="a ce stade si vous ne faite pas attention vous serait face a plusieurs maladies graves notament les cancers,maladies cardio vasculaires et les Diabetes le mieux a faire pour vous est de soignes,equilibrer,varier votre alimentation et cette alimentation dois etre riche en glucide,lipide,protide un des plus gros pilier dans l'amelioration de votre etat est de pratiquer des activitees sportives";
+      document.getElementById("img").style.background="url(img/big.jpg)";
+    }
+    if(imc>18.5 && imc<25){
+      document.getElementById("etat").innerHTML="eventail normal";
+      document.getElementById("risques").innerHTML="C'est l'intervalle de poid considéré comme normal. vous etes a l'abris des maladies du au poid";
+      document.getElementById("conseils").innerHTML="dans votre etat ont peut dire vous etes sain mais pas a l'abris des maladies dus au poid. il sera preferable pour vous de continuer a varier et equilibrer les aliments que vous consommez.";
+      document.getElementById("img").style.background="url(img/kake.jpeg)";
+    }
+  }
+    </script>
+    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" type="text/css" href="imc/feuille_ecran.css" media="all and (max-width:100000px)">
+</HEAD>
+<BODY>
+ <fieldset width="55" height="40"><center><h1><P>bienvenue sur ce site</P></h1> </center>
+<h2><P> Dans ce cadre il est question d'entrer votre masse et votre taille puis appuyez sur le bouton pour avoir la valeur de votre imc </P></h2>
+<center><P><b> masse <input type="parsefloat" placeholder="exemple: 65" id="m"></input type></b></P>
+<P><b>taille <input type="parsefloat" placeholder="exemple: 1.65" id="t"></input type></b></P>
+<P> <button onclick="calculdeimc();"> cliquez ici pour calculer l'imc</button></P>
+<P><b><u> resultat <input type="text" id="resultat"> </input type></u></b></P>
+<P><b><u>etat <div id="etat"></div></u></b></P>
+<P><b><u> risques <div id="risques"></div></u></b></P>
+<P><b><u> conseils <div id="conseils"></div></u></b></P></center>
+<div class="img" id="img"></div>
+<ul>
+<li><p class="message"> voici le tableau a consulter</p></li>
+  <div style="display: flex;">
+<table name="interpretation" border="2" id="table" >
+<tr>
+<th>valeur</th>
+<th>Etat</th>
+</tr>
+<tr>
+<td> <18.5 </td>
+<td> insuffisance pondérale </td>
+</tr>
+<tr> 
+<td> 18.5-24.9 </td>
+<td> eventail normal </td>
+</tr>
+<tr>
+<td> 25-29.9 </td>
+<td> préobésité </td>
+</tr>
+<tr>
+<td> 30-34.9 </td>
+<td> obésité de classe 1 </td>
+</tr>
+<tr>
+<td> 35-39.9 </td>
+<td> obésité de classe 2 </td>
+</tr>
+<tr>
+<td> >=40 </td>
+<td> obésité de classe 3 </td>
+</tr>
+</table>
+<center><img src="img/balance.jpeg.jpeg" alt="camemberg" style="margin-left:4rem"/>
+<img src="img/téléchargement.jpeg" alt="camemberg" style="margin-left:4rem"/></div></center>
+</div>
+<li><p class="message "> voici les risques et conseils a chaque etat  </p></li>
+</ul>
+<ol>
+<li><p><b><u>RISQUES </u></b></p></li>
+<p><b><u>IMC inferieure a 18.5:</u></b>vous etes considéré en sous poid. les risques lié a l'insuffisance pondérale est l'ostéoporose, l'infertilité et une faiblesse au niveau du systeme immunitaire.</p>
+<p><b><u>IMC entre 18.5 et 24.9:</u></b>C'est l'intervalle de poid considéré comme normal cela peut reduire votre risque d'avoir des problemes liée au poid.</p>
+<p><b><u>IMC supérieure ou égale a  25:</u></b>vous etes plus a risque de develloper les Diabetes,des maladies cardiovasculaires,et des cancers.</p>
+<li><p><b><u>CONSEIL</u></b></p></li>
+</ol>
+<ul>
+<li><p><b><u>insuffisance pondérale:</u></b> faudrait mieux vous alimenter c'est a dire de varier votre alimentation en consommant des aliments richent en glucides,lipide,protide,sels mineraux et surtout n'oublier pas d'equilibrer.</p></li>
+<p><div><img src="img/pink.jpeg"/></div></p>
+<li><p><b><u>eventail normal:</u></b> dans votre etat ont peut dire vous etes sain mais pas a l'abris des maladies dus au poid. il sera preferable pour vous de continuer a varier et equilibrer les aliments que vous consommez.</p></li>
+<p><div><img src="img/two.jpeg"/></div></p>
+<li><p><b><u>obeisité:</u></b> a ce stade si vous ne faite pas attention vous serait face a plusieurs maladies graves notament les cancers,maladies cardio vasculaires et les Diabetes le mieux a faire pour vous est de soignes,equilibrer,varier votre alimentation et cette alimentation dois etre riche en glucide,lipide,protide,pratiquer regulierement le sport.</p></li>
+<p><div><img src="img/big.jpg.jpg"/></div></p>
+</ul>
+<h3><p>ces videos ont etes concus pour vous aider regardez les</p></h3>
+<section>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/d2Wks724pSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+<section>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7iiHFYj6koU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HzYOOPAlFsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<section>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/K_n14eYCTaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+<p>si vous voulez me contacter envoyez moi un email a <a href="mailto:kevinlaurencedeffo@gmail.com">kevinlaurencedeffo@gmail.com</a></p>
+<footer id="but"><span>2021 kevin deffo <br> kevinlaurencedeffo@gmail.com Etudiant a l'institut universitaire de siantou(ius) </br></span></footer>
+</fieldset>   
+</BODY>
+</HTML>
